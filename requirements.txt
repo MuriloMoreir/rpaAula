@@ -1,0 +1,4 @@
+Coverage
+Selenium
+pandas
+webdriver-manager
