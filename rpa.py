@@ -2,18 +2,18 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from time import sleep
 from datetime import datetime
+from openpyxl import load_workbook
 from selenium.webdriver.chrome.options import Options
 import pandas as pd
+
 
 # Obter a data e hora atual
 dataAtual = datetime.now()
 
 # Convertendo para String
-dataConvertida = dataAtual.strftime('%Y-%m-%d')
-horaAtual = dataAtual.strftime('%H:%M:%S')
+dataConvertida = dataAtual.strftime('%Y-%m-%d %H:%M:%S')
 
-print('Data atual: ', dataConvertida)
-print('Hora atual: ', horaAtual)
+print('Data e Hora atual: ', dataConvertida)
 
 # Entrando no site
 chrome_options = Options()
@@ -28,6 +28,3 @@ dolar = driver.find_element(By.CSS_SELECTOR, ('.DFlfde.SwHCTb'))
 dolar_site = dolar.text
 dolar_site = float(dolar_site.replace(",","."))
 print('Dólar: ', dolar_site)
-
-# Fechando navegador
-driver.quit()
