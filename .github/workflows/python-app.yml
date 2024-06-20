@@ -34,9 +34,3 @@ jobs:
 
     - name: Relatório
       run: coverage report
-
-    - name: Teste
-      run: coverage run -m rpa_teste
-
-    - name: Relatorio
-      run: coverage report
