@@ -1,4 +1,5 @@
 Coverage
-Selenium
+selenium
 pandas
+psycopg2
 webdriver-manager
