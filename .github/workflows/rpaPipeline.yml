@@ -30,7 +30,7 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
     - name: Teste
-      run: coverage run -m rpa_teste
+      run: coverage run -m rpa
 
     - name: Relatorio
       run: coverage report
