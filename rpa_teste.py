@@ -31,27 +31,6 @@ dolar_site = float(dolar_site.replace(",","."))
 print('Dólar: ', dolar_site)
 print('Dólar:', dolar_site)
 
-
-# Conectando com o DB
-conexao = psycopg2.connect(database = "dbCotacao",
-                           host = "pg-3f7b996d-muriloolimora971.f.aivencloud.com",
-                           user = "avnadmin",
-                           password = "AVNS_BjsAizQig1olY9q0atk",
-                           port = "23734")
-
-print(conexao.info)
-print(conexao.status)
-
-# Conexão com o cursor
-cursor = conexao.cursor()
-
-# Acionando Procedure
-cursor.execute("call inserir_cotacao_dolar(%s, %s, %s)", (dataConvertida, horaAtual, dolar_site))
-
-# Comitando
-conexao.commit()
-print("Dados inseridos com sucesso !!!")
-
 # Desligando a conexão com o banco
 cursor.close()
 conexao.close()
