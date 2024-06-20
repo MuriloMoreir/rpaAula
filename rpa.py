@@ -27,3 +27,6 @@ dolar = driver.find_element(By.CSS_SELECTOR, ('.DFlfde.SwHCTb'))
 dolar_site = dolar.text
 dolar_site = float(dolar_site.replace(",","."))
 print('Dólar: ', dolar_site)
+
+# Fechando navegador
+driver.quit()
