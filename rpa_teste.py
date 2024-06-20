@@ -4,7 +4,6 @@ from time import sleep
 from datetime import datetime
 from selenium.webdriver.chrome.options import Options
 import pandas as pd
-import psycopg2
 
 # Obter a data e hora atual
 dataAtual = datetime.now()
@@ -30,10 +29,6 @@ dolar_site = dolar.text
 dolar_site = float(dolar_site.replace(",","."))
 print('Dólar: ', dolar_site)
 print('Dólar:', dolar_site)
-
-# Desligando a conexão com o banco
-cursor.close()
-conexao.close()
 
 # Fechando navegador
 driver.quit()
