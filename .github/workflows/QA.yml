@@ -4,8 +4,6 @@
 name: Python application
 
 on:
-  push:
-    branches: [ "QA" ]
   pull_request:
     branches: [ "QA" ]
 
@@ -35,16 +33,11 @@ jobs:
     - name: Relatório
       run: coverage report
 
-    - name: Git Version
-      id: ver
-      uses: codacy/git-version@2.4.0
-
-
     - uses: mr-smithers-excellent/docker-build-push@v6
       name: Docker
       with:
         image: murilomoreira971/dataPipeline
-        tags: ${{github.run_number}}, ${{steps.ver.outputs.version}}
+        tags: ${{github.run_number}}
         registry: docker.io
         dockerfile: Dockerfile
         username: ${{secrets.DOCKER_USERNAME}}
