@@ -37,7 +37,7 @@ jobs:
       name: Docker
       with:
         image: murilomoreira971/dataPipeline
-        tags: ${{github.run_number}}
+        tags: QA-${{github.run_number}}
         registry: docker.io
         dockerfile: Dockerfile
         username: ${{secrets.DOCKER_USERNAME}}
