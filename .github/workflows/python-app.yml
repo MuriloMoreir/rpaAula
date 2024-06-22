@@ -42,3 +42,6 @@ jobs:
         dockerfile: Dockerfile
         username: ${{secrets.DOCKER_USERNAME}}
         password: ${{secrets.DOCKER_PASSWORD}}
+
+    - name: AMOOO
+      run: AMO MUITO O MURILO DEVOPSSSS
